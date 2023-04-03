@@ -20,9 +20,11 @@ import java.sql.Blob;
 public class Produit implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
+
     //@GeneratedValue(generator = "uuid")
     //@GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Produit")
     private Long ID;
     @Column(name = "Reference_Produit")

@@ -32,11 +32,11 @@ public class FactureAchat {
     @Column(name = "Date")
     private Date date;
     @Column(name = "Total_HT")
-    private Float totalHT;
+    private double totalHT;
     @Column(name = "Total_TVA")
-    private Float totalTVA;
+    private double totalTVA;
     @Column(name = "Total_TTC")
-    private Float totalTTC;
+    private double totalTTC;
 
     //private Collection<FactureAchat> factureAchats;
 

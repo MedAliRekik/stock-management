@@ -15,9 +15,11 @@ import java.sql.Blob;
 @Table(name = "Matiere_Premiere")
 public class MatierePremiere {
     private static final long serialVersionUID = 1L;
-    @Id
+
     //@GeneratedValue(generator = "uuid")
     //@GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_MP")
     private Long id;
     @Column(name = "Reference_MP")
