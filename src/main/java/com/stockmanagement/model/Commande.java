@@ -4,11 +4,12 @@ import lombok.*;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
@@ -20,7 +21,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "Commande")
-public class Commande {
+public class Commande implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //@Size(min = 3, max = 100)
@@ -29,14 +30,17 @@ public class Commande {
     @Column(name = "Numero")
     private Long numero;
     @Column(name = "Date_Commande")
-    private Date dateCmd;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull
+    private Date dateCommande;
 
     @Column(name = "total")
     private double total;
     @Column(name = "Valide",nullable=false)
     private Boolean isValide;
     @ManyToOne
-    @JoinColumn(name="CODE_CLIENT",nullable=true)
+    @JoinColumn(name="CODE_CLIENT")
+    @Nullable
     @NotFound(action = NotFoundAction.IGNORE)
     private Client client;
 

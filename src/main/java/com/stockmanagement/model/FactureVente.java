@@ -6,6 +6,7 @@ import lombok.experimental.Accessors;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Getter
@@ -16,7 +17,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "Facture_de_Vente")
-public class FactureVente {
+public class FactureVente implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id

@@ -6,6 +6,7 @@ import lombok.experimental.Accessors;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
@@ -25,10 +26,10 @@ public class Client implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NonNull
+    @NotNull
     @Size(min = 3,max = 100)
-    @Column(name = "ID_Client")
-    private Long Id;
+    @Column(name = "Code_Client")
+    private Long code;
     @Column(name = "Nom")
     private String nom;
     @Column(name = "Prenom")

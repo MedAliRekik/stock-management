@@ -4,6 +4,7 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "Fournisseur")
-public class Fournisseur {
+public class Fournisseur implements Serializable {
 
 
     @Id

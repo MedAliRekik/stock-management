@@ -7,6 +7,7 @@ import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -16,7 +17,7 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "UserRole")
-public class UserRoles {
+public class UserRoles implements Serializable {
     @Id
     @GeneratedValue
     private Long id;

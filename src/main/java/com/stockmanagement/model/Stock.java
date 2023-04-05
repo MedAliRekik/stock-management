@@ -8,6 +8,7 @@ import org.hibernate.annotations.NotFoundAction;
 import javax.validation.constraints.Min;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Getter
@@ -18,7 +19,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "Stock")
-public class Stock {
+public class Stock implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

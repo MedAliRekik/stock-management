@@ -4,6 +4,7 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 @Getter
 @Setter
@@ -13,7 +14,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "Facture")
-public abstract class Facture {
+public abstract class Facture implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Facture")

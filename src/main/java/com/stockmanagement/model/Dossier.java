@@ -7,6 +7,7 @@ import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.Date;
 
 @Getter
@@ -17,7 +18,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "Dossier")
-public class Dossier {
+public class Dossier implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NonNull

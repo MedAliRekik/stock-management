@@ -4,6 +4,7 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Blob;
 @Getter
 @Setter
@@ -13,7 +14,7 @@ import java.sql.Blob;
 @ToString
 @Entity
 @Table(name = "Matiere_Premiere")
-public class MatierePremiere {
+public class MatierePremiere implements Serializable {
     private static final long serialVersionUID = 1L;
 
     //@GeneratedValue(generator = "uuid")
